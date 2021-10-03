@@ -1,0 +1,20 @@
+// POPPINS BOLD
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+// ROBOTO
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@700&display=swap');
+
+$dark-bootstrap: #212529;
+$emerald: #26BE96;
+
+@import './components/login';
+@import './components/register';
+@import './components/navbar';
+@import './components/home';
+@import './components/allProducts';
+@import './components/oneProduct';
+
+// *{
+//     font-family: 'Poppins';
+// }
+
+

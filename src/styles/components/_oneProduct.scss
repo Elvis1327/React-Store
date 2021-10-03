@@ -1,0 +1,74 @@
+._main-container-product{
+    width: 100%;
+    padding: 50px 30px;
+    font-family: 'Poppins';
+    height: 590px;
+}
+
+// CONTENEDOR
+._container-product{
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    // flex-wrap: wrap;
+}
+
+// IMAGEN
+._product-img{
+    width: 30%;
+}
+._product-img-img{
+    width: 400px;
+    max-width: 100%;
+}
+// NOMBRE DEL PRODUCTO
+._one-product-name{
+    font-size: 40px;
+    margin: 0px;
+}
+
+// STRONG
+._product-strong-price{
+    color: $emerald;
+}
+
+// DIV INFO
+._product-info{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+// BUTONS
+._product-buttons{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+// PRIMER BOTON ATRAS
+._button-volver-atras{
+    outline: none;
+    border: none;
+    text-decoration: none;
+    background-color: rgba(204, 204, 204, 0.582);
+    padding: 10px;
+    border-radius: 10px;
+    color: black;
+    transition: color 300ms;
+    &:hover{
+        color: black;
+        background-color: $emerald;
+    }
+}
+// SEGUNDO BOTTON ADD CART
+._product-add-cart{
+    outline: none;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: $emerald;
+}
+
+
+
