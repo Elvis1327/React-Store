@@ -1,0 +1,31 @@
+
+._main-container-pagenotfound{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Poppins';
+}
+
+._img-not-found{
+    width: 350px;
+}
+
+._h1-page-404-not{
+    text-transform: uppercase;
+}
+
+// BUTTON
+._404-button-back{
+    width: 100%;
+    display: block;
+    padding: 8px;
+    color: black;
+    background-color: $emerald;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 7px;
+    &:hover{
+        color: black;
+    }
+}
