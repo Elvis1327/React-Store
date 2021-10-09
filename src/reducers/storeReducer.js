@@ -3,7 +3,6 @@ import { TYPES } from '../types/TYPES';
 const initialState = {
     products: [],
     loading: true,
-    cart: [],
     product: {}
 };
 

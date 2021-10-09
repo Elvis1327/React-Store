@@ -13,7 +13,7 @@ export const Home = () => {
 
     // RETORNAR 3 PRODUCTOS
     const returnThreeProducts = () => {
-        const data = products.filter(product => product.id <= 3)
+        const data = products.filter(product => product.id <= 3);
         return data;
     }
     const threeProducts = returnThreeProducts();

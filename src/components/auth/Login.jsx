@@ -15,8 +15,8 @@ export const Login = () => {
 
     return (
         <div className="main-container-login-form">
-            <h1 className="_h1-login-form">Login</h1>
             <form onSubmit={handleSubmit}>
+                <h1 className="_h1-login-form">Login</h1>
                 <div className="inputs-login">
                     <label className="_label-form-login">Email</label>
                     <input 
@@ -25,16 +25,18 @@ export const Login = () => {
                         name="email"
                         placeholder="Introduce your Email"
                         onChange={handleOnChange}
+                        autoComplete="off"
                     />
                 </div>
                 <div className="inputs-login">
-                    <label className="_label-form-login">Email</label>
+                    <label className="_label-form-login">Password</label>
                     <input 
                         type="text" 
                         className="_login-input"
                         name="password"
-                        placeholder="Introduce your Email"
+                        placeholder="Introduce your Password"
                         onChange={handleOnChange}
+                        autoComplete="off"
                     />
                 </div>
                 <button type="submit" className="_login-button-form">Login</button>
