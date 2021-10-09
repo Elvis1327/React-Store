@@ -8,7 +8,6 @@ export const OneProduct = () => {
     const dispatch = useDispatch();
     const { product } = useSelector(state => state.store)
     const { id } = useParams();
-    console.log(product)
 
     useEffect(() => {
         dispatch(getOneProductAction(id))

@@ -8,10 +8,10 @@ export const Register = () => {
 
 
     return (
-        <div className="main-container-register-fomr">
-            <h1 className="_h1-register-fom">Register</h1>
+        <div className="main-container-register-form">
             <form onSubmit={handleSubmit}>
-                <div className="inputs">
+                <h1 className="_h1-register-fom">Register</h1>
+                <div className="inputs-register">
                     <label>Nombre</label>
                     <input 
                         type="text" 
@@ -20,7 +20,7 @@ export const Register = () => {
                         name="nombre"
                     />
                 </div>
-                <div className="inputs">
+                <div className="inputs-register">
                     <label>Email</label>
                     <input 
                         type="text" 
@@ -29,7 +29,7 @@ export const Register = () => {
                         name="email"
                     />
                 </div>
-                <div className="inputs">
+                <div className="inputs-register">
                     <label>Password</label>
                     <input 
                         type="text" 

@@ -1,0 +1,47 @@
+// MAIN CONTAINER
+.main-container-login-form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Poppins';
+}
+// FORMULARIO
+form{
+    width: 400px;
+    margin-top: 50px;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+// H1 DEL FORM
+._h1-login-form{
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+// INPUTS CONTAINER
+.inputs-login{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 10px 0px;
+}
+// INPUT
+._login-input{
+    width: 100%;
+    padding: 7px;
+    border: none;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.219);
+    border-radius: 5px;
+}
+
+._login-button-form{
+    border: none;
+    width: 100%;
+    border-radius: 10px;
+    background-color: $emerald;
+    padding: 7px;
+}
+
+

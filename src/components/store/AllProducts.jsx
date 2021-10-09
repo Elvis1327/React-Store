@@ -9,6 +9,12 @@ export const AllProducts = () => {
     useEffect(() => {
         dispatch(getAllProductsAction());
     }, [dispatch]);
+    let carrito = [];
+    
+    const handleAddProductCart = (productt) => {
+        carrito.push(productt)
+        localStorage.setItem('products-cart', JSON.stringify(carrito));
+    }
 
     return (
         <div className="_main-container-allproducts">
@@ -26,7 +32,12 @@ export const AllProducts = () => {
                         </p>
                         <div className="_products-buttons">
                             <Link to={`/store/product/${product.id}`}>See More</Link>
-                            <button className="_products-add-card">Add to Cart</button>
+                            <button 
+                                className="_products-add-card"
+                                onClick={() => handleAddProductCart(product)}
+                            >
+                                Add to Cart
+                            </button>
                         </div>
                     </div>
                 ))}
