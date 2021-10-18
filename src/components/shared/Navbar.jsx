@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 export const Navbar = () => {
-    const cartCount = JSON.parse(localStorage.getItem('products-cart')) || [];
+    const { cart } = useSelector(state => state.cartProducts);
+    
     return (
         <header className="_main-header">
             <Link to="/" className="principal-h1">The Authentic Corner</Link>
@@ -10,7 +12,7 @@ export const Navbar = () => {
                 <Link className="navbar-links" to="/store/cart">
                 <i className="fas fa-cart-plus container-float">
                     <div className="_container-float-cart-count">
-                        {cartCount.length}
+                        {cart.length}
                     </div>
                 </i>
                 </Link>

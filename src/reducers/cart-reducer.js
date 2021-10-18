@@ -1,14 +1,29 @@
-// import { TYPES } from '../types/TYPES';
-// const initialState = {
-//     cart: [],
-//     countCart: null
-// };
+import { TYPES } from '../types/TYPES';
+const initialState = {
+    cart: localStorage.getItem('products-cart') 
+        ? JSON.parse(localStorage.getItem('products-cart'))
+        : [] 
+};
 
-// export const productsCartReducer = (state = initialState, action) => {
-//     switch(action.type){
-//         case TYPES.
-//         default:
-//             return state;
-//     }
-// }
+export const productsCartReducer = (state = initialState, action) => {
+    switch(action.type){
+        case TYPES.getAllCart:
+            return {
+                ...state,
+                cart: [...action.payload]
+            }
+        case TYPES.addToCart:
+            return {
+                ...state,
+                cart: [...state.cart, action.payload],
+            };
+        case TYPES.clearCart:
+            return {
+                ...state,
+                cart: action.payload
+            }
+        default:
+            return state;
+    }
+}
 

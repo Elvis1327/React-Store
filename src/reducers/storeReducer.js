@@ -3,6 +3,7 @@ import { TYPES } from '../types/TYPES';
 const initialState = {
     products: [],
     loading: true,
+    loadingOneProduct: true,
     product: {}
 };
 
@@ -11,12 +12,14 @@ export const storeReducer = (state = initialState, action) => {
         case TYPES.allProducts:
             return {
                 ...state,
-                products: action.payload
+                products: action.payload,
+                loading: false
             };
         case TYPES.oneProductStore:
             return {
                 ...state,
-                product: action.payload
+                product: action.payload,
+                loadingOneProduct: false
             };
         default:
             return state;

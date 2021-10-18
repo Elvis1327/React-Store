@@ -3,11 +3,10 @@ import { useForm } from '../../hooks/useForm';
 
 export const Login = () => {
 
-    const { inputsValues, handleOnChange } = useForm({
+    const { handleOnChange } = useForm({
         email: '',
         password: ''
     });
-    const { email, password } = inputsValues;
 
     const handleSubmit = (e) => {
         e.preventDefault();

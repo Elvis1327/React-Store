@@ -1,0 +1,128 @@
+// MAIN CONTAINER
+.main-container-cart-shopping{
+    width: 100%;
+    background-color: #EAEDED;
+    padding: 14px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+// ALL ITEMS SHOOPING
+.all-cart-items{
+    background-color: #fff;
+    padding: 15px;
+    width: 67%;
+}
+
+// all items
+.all-items-in-cart{
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 5px;
+}
+
+// items
+.item-cart-container{
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+// imagen container
+.item-cart-img-product{
+    width: 200px;
+    height: 200px;
+}
+.item-cart-img-product img{
+    width: 200px;
+    height: 200px;
+    max-width: 100%;
+}
+
+// .products-cart-info-container
+.item-cart-info-product{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 3px;
+}
+
+// h1 product cart
+.about-product-in-cart{
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+
+// SPANS DISPOBILE OR ALMOST 0
+// QUEDAN
+.about-product-quedan-cart{
+    color: red;
+    font-size: 14px;
+}
+.about-product-disponible-cart{
+    color: green;
+    font-size: 14px;
+}
+
+// BOTON VER MAS
+.about-product-vermas-cart{
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Poppins';
+    background-color: $emerald;
+    &:hover {
+        color: black;
+    }
+}
+
+
+// ANOTHER COMPONENT TOTAL START
+// CONTAINER ANOTHER COMPONENT TOTAL
+.total-price-products-cart{
+    background-color: #fff;
+    padding: 15px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+// TOTAL H1
+.products-cart-count{
+    font-size: 25px;
+    margin-bottom: 0px;
+}
+// BOTON DE PROCEDER EL PAGO
+.button-proceder-al-pago{
+    padding: 7px;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: $emerald;
+    border-radius: 6px;
+    font-family: 'Poppins';
+}
+
+// BUTTON VACIAR CARRITO DE COMPRAS
+.vaciar-cart{
+    padding: 7px;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: red;
+    border-radius: 6px;
+    font-family: 'Poppins';
+}
+
+
+

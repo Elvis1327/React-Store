@@ -13,6 +13,8 @@ $emerald: #26BE96;
 @import './components/allProducts';
 @import './components/oneProduct';
 @import './components/not-found';
+@import './components/_loadings.scss';
+@import './components/cart';
 
 // *{
 //     font-family: 'Poppins';

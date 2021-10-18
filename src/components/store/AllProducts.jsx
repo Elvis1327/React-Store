@@ -2,6 +2,7 @@ import { React, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getAllProductsAction } from '../../actions/storeActions';
+import { addProductCartAction } from '../../actions/cart-actions';
 
 export const AllProducts = () => {
     const dispatch = useDispatch();
@@ -9,11 +10,9 @@ export const AllProducts = () => {
     useEffect(() => {
         dispatch(getAllProductsAction());
     }, [dispatch]);
-    let carrito = [];
     
-    const handleAddProductCart = (productt) => {
-        carrito.push(productt)
-        localStorage.setItem('products-cart', JSON.stringify(carrito));
+    const handleProductCart = (product) => {
+        dispatch(addProductCartAction(product));
     }
 
     return (
@@ -34,7 +33,7 @@ export const AllProducts = () => {
                             <Link to={`/store/product/${product.id}`}>See More</Link>
                             <button 
                                 className="_products-add-card"
-                                onClick={() => handleAddProductCart(product)}
+                                onClick={() => handleProductCart(product)}
                             >
                                 Add to Cart
                             </button>
