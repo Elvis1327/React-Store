@@ -32,13 +32,14 @@ export const getProductsCartAction = () => {
 // CLEAR CART
 const clearCart = (cart) => {
     return {
-        type: TYPES.cleanCart,
+        type: TYPES.clearCart,
         payload: cart
     };
 };
 export const clearCartAction = () => {
     return async (dispatch) => {
-        dispatch(clearCart())
+        const clear = localStorage.removeItem('products-cart');
+        dispatch(clearCart(clear));
     }
 }
 

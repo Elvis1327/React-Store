@@ -20,7 +20,7 @@ export const productsCartReducer = (state = initialState, action) => {
         case TYPES.clearCart:
             return {
                 ...state,
-                cart: action.payload
+                cart: state.cart.filter(item => item.length <= 0)
             }
         default:
             return state;
