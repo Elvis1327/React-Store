@@ -7,10 +7,23 @@ const initialState = {
 
 export const authReducer = (state = initialState, action) => {
     switch(action.type){
+        case TYPES.authLogin:
+            return {
+                ...state,
+                user: action.payload.email,
+                check: true
+            };
+        case TYPES.authRegister:
+            const resp = action.payload;
+            return {
+                ...state,
+                user: resp.email,
+                check: true
+            }
         default:
             return state;
-    }
-}
+    };
+};
 
 
 

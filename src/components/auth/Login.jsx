@@ -1,15 +1,22 @@
+// REACT UTILIRIES
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+// REACT COMPONENTS AND UTILIRIES
 import { useForm } from '../../hooks/useForm';
+import { authLoginAction } from '../../actions/auth-actions'; 
 
 export const Login = () => {
-
-    const { handleOnChange } = useForm({
+    const dispatch = useDispatch();
+    const { loadingForm } = useSelector(state => state.formLoading);
+    console.log(loadingForm)
+    const { handleOnChange, inputsValues } = useForm({
         email: '',
         password: ''
     });
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        dispatch(authLoginAction(inputsValues));
     };
 
     return (
@@ -38,7 +45,14 @@ export const Login = () => {
                         autoComplete="off"
                     />
                 </div>
-                <button type="submit" className="_login-button-form">Login</button>
+                {loadingForm
+                    ?
+                    <div className="loading-form-login-spinner-container">
+                        <div className="loading-form-auth-login"></div>
+                    </div>
+                    :
+                    <button type="submit" className="_login-button-form">Login</button>
+                }
             </form>
         </div>
     );

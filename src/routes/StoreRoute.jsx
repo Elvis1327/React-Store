@@ -1,5 +1,7 @@
+// REACT UTILIRIES
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+// COMPONENTS
 import { NotFoundPage } from '../components/shared/NotFoundPage';
 import { AllProducts } from '../components/store/AllProducts'
 import { OneProduct } from '../components/store/OneProduct';

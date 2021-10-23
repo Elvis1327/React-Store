@@ -10,16 +10,13 @@ export const Home = () => {
     useEffect(() => {
         dispatch(getAllProductsAction());
     }, [dispatch]);
-
     // RETORNAR 3 PRODUCTOS
     const returnThreeProducts = () => {
         const data = products.filter(product => product.id <= 3);
         return data;
     }
     const threeProducts = returnThreeProducts();
-
-    // LOADING CONDICIONAL
-
+    
     return (
         <section className="main-container-home">
             <h1>Los Mejores Precios.</h1>
