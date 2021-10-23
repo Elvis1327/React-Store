@@ -24,4 +24,95 @@
         transform: rotate(360deg);
     }
 }
-// SEGUNDO LOADING ALL PRODUCTS COMPONENT: <AllProducts />
+// SEGUNDO LOADING ALL PRODUCTS COMPONENT: <OneProduct />
+.loading-one-product{
+    width: 100%;
+    position: relative;
+}
+.loading-one-product-snniper{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 20px;
+    left: 45%;
+    border: 10px solid #ccc;
+    border-radius: 100%;
+    border-left-color: $emerald;
+    animation: loading-one-product infinite linear 1s;
+    // animation-name: loading-one-product;
+    // animation-iteration-count: infinite;
+    // animation-duration: 1s;
+    // animation-timing-function: linear;
+}
+@keyframes loading-one-product {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+// BUTTON LOADING LOGIN
+.loading-form-login-spinner-container{
+    border: none;
+    width: 100%;
+    border-radius: 10px;
+    background-color: $emerald;
+    padding: 7px;
+    height: 40px;
+    position: relative;
+    overflow: hidden;
+}
+.loading-form-auth-login{
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    left: 45%;
+    border: 5px solid #ccc;
+    border-radius: 100%;
+    border-left-color: $emerald;
+    animation: loading-form-login 1s linear infinite;
+}
+@keyframes loading-form-login{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+// BUTTON FORM REGISTER
+.loading-form-register-spinner-container{
+    border: none;
+    width: 100%;
+    border-radius: 10px;
+    background-color: $emerald;
+    padding: 7px;
+    height: 40px;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+.loading-form-auth-register{
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    left: 45%;
+    border: 5px solid #ccc;
+    border-radius: 100%;
+    border-left-color: $emerald;
+    animation: 1s linear infinite loading-form-register;
+}
+
+@keyframes loading-form-register {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
