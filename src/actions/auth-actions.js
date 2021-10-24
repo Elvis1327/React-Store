@@ -48,6 +48,19 @@ export const authRegisterAction = (user) => {
         };
     };
 };
+// LOGOUT
+const logout = () => {
+    return {
+        type: TYPES.authLogout,
+        payload: false
+    }
+};
+export const logoutAction = () => {
+    return async (dispatch) => {
+        localStorage.removeItem('token');
+        dispatch(logout());
+    }
+}
 // VALIDATE TOKEN AUTH
 export const authValidateToken = () => {
     return async (dispatch) => {

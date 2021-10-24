@@ -16,7 +16,6 @@ form{
 }
 // H1 DEL FORM
 ._h1-login-form{
-    border-bottom: 1px solid #ccc;
     text-align: center;
 }
 // INPUTS CONTAINER
@@ -24,7 +23,7 @@ form{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin: 10px 0px;
+    margin: 5px 0px;
 }
 // INPUT
 ._login-input{
@@ -43,6 +42,7 @@ form{
     background-color: $emerald;
     padding: 7px;
     height: 40px;
+    margin-top: 5px;
 }
 
 

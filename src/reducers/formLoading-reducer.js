@@ -9,12 +9,12 @@ export const formLoadingReducer = (state = initialState, action) => {
         case TYPES.initialLoadingForm:
             return {
                 ...state,
-                loadingForm: true
+                loadingForm: action.payload
             };
         case TYPES.finishLoadingForm:
             return {
                 ...state,
-                loadingForm: false
+                loadingForm: action.payload
             }
         default:
             return state;

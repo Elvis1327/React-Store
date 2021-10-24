@@ -6,6 +6,10 @@
     align-items: center;
     font-family: 'Poppins';
 }
+// H1 FORM
+._h1-register-form{
+    text-align: center;
+}
 // FORMULARIO
 form{
     width: 400px;
@@ -20,7 +24,7 @@ form{
 .inputs-register{
     display: flex;
     flex-direction: column;
-    margin: 7px;
+    margin: 5px 0px;
 }
 // INPUT
 ._register-input{
@@ -40,5 +44,6 @@ form{
     padding: 7px;
     align-items: center;
     height: 40px;
+    margin-top: 5px;
 }
 // BUTTON LOADING

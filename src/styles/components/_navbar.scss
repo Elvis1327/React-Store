@@ -73,4 +73,22 @@
     line-height: 22px;
 }
 
+// BUTTON LOGOUT
+.navbar-links-button{
+    font-size: 22px;
+    text-decoration: none;
+    color: white;
+    padding: 13px 5px;
+    transition: all 300ms;
+    border-radius: 10px;
+    background-color: $dark-bootstrap;
+    border: none;
+    &:hover{
+        color: white;
+        background-color: tomato;
+        padding: 13px 5px;
+        border-radius: 10px;
+    }
+}
+
 
