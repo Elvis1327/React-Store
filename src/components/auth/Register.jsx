@@ -13,26 +13,28 @@ export const Register = () => {
         password: ''
     });
     const { nombre, email, password } = inputsValues;
-    const [ errorForm, setErrorForm ] = useState({nombreError: '', emailError: '', passwordError: ''});
+    const [ errorForm, setErrorForm ] = useState({});
 
     const handleSubmit = (e) => { 
         e.preventDefault();
-        validateFormRegister();
+        if(validateFormRegister()){
+            setErrorForm({})
+        }
         dispatch(authRegisterAction(inputsValues));
     };
     // Validate Form
     const validateFormRegister = () => {
         if(nombre.length < 5){
-            setErrorForm({...errorForm, nombreError: 'El nombre debe tener 5 o mas caracteres'});
+            setErrorForm({nombreError: 'El nombre debe tener 5 o mas caracteres'});
             return false;
         }else if(email.length < 5){
-            setErrorForm({...errorForm, emailError: 'El nombre debe tener 5 o mas caracteres'});
+            setErrorForm({emailError: 'El nombre debe tener 5 o mas caracteres'});
             return false;
         }else if(!Validator.isEmail(email)){
-            setErrorForm({...errorForm, emailError: 'El nombre debe tener 5 o mas caracteres'});
+            setErrorForm({emailError: 'El nombre debe tener 5 o mas caracteres'});
             return false;
         }else if(password.length < 5){
-            setErrorForm({...errorForm, passwordError: 'El nombre debe tener 5 o mas caracteres'});
+            setErrorForm({passwordError: 'El nombre debe tener 5 o mas caracteres'});
             return false;
         }
         return true;
@@ -52,7 +54,7 @@ export const Register = () => {
                         name="nombre"
                         onChange={handleOnChange}
                     />
-                    <span style={{color: 'red'}} > {errorForm.nombreError && `${errorForm.nombreError}`} </span>
+                    <span style={{color: 'red'}} > {errorForm?.nombreError && `${errorForm.nombreError}`} </span>
                 </div>
                 <div className="inputs-register">
                     <label>Email</label>
@@ -63,7 +65,7 @@ export const Register = () => {
                         name="email"
                         onChange={handleOnChange}
                     />
-                    <span style={{color: 'red'}} > {errorForm.emailError && `${errorForm.emailError}`} </span>
+                    <span style={{color: 'red'}} > {errorForm?.emailError && `${errorForm.emailError}`} </span>
                 </div>
                 <div className="inputs-register">
                     <label>Password</label>
@@ -74,7 +76,7 @@ export const Register = () => {
                         name="password"
                         onChange={handleOnChange}
                     />
-                    <span style={{color: 'red'}} > {errorForm.passwordError && `${errorForm.passwordError}`} </span>
+                    <span style={{color: 'red'}} > {errorForm?.passwordError && `${errorForm.passwordError}`} </span>
                 </div>
                 {(loadingForm === true)
                     ?

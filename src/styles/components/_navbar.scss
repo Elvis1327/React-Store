@@ -41,10 +41,22 @@
         padding: 13px 5px;
         border-radius: 10px;
     }
-    &:first-child{
-        width: 60px;
+}
+.navbar-links-cart{
+    font-size: 22px;
+    text-decoration: none;
+    color: white;
+    padding: 13px 5px;
+    transition: all 300ms;
+    border-radius: 10px;
+    width: 60px;
         text-align: center;
         margin: 0px;
+    &:hover{
+        color: white;
+        background-color: $emerald;
+        padding: 13px 5px;
+        border-radius: 10px;
     }
 }
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+
 import { clearCartAction } from '../../actions/cart-actions';
 
 const TotalCart = () => {
@@ -15,8 +16,8 @@ const TotalCart = () => {
     const resp = returnPriceProducts(cart);
 
     const handleRemoveCart = () => {
-        dispatch(clearCartAction())
-    }
+        dispatch(clearCartAction());
+    };
 
     return (
         <div className="total-price-products-cart">
@@ -25,8 +26,9 @@ const TotalCart = () => {
                 Proceder al pago
             </button>
             <button 
-                className="vaciar-cart"
+                className={cart.length <= 0 ? 'vaciar-cart-vacio' : 'vaciar-cart'}
                 onClick={handleRemoveCart}
+                disabled={cart.length <= 0 && 'off'}
             >
                 Vaciar Cart
             </button>

@@ -15,7 +15,7 @@ const NavbarIn = () => {
         <header className="_main-header">
             <Link to="/" className="principal-h1">The Authentic Corner</Link>
             <div className="navbar">
-                <Link className="navbar-links" to="/store/cart">
+                <Link className="navbar-links-cart" to="/store/cart">
                 <i className="fas fa-cart-plus container-float">
                     <div className="_container-float-cart-count">
                         {cart.length}

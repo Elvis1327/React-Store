@@ -1,4 +1,5 @@
 import { TYPES } from '../types/TYPES';
+import Swal from 'sweetalert2';
 let cart = [];
 
 // ADD TO THE CART
@@ -13,7 +14,7 @@ export const addProductCartAction = (product) => {
     cart.push(product)
     localStorage.setItem('products-cart', JSON.stringify(cart));
     const resp = JSON.parse(localStorage.getItem('products-cart')) || [];
-        dispatch(addProductCart(resp))
+        dispatch(addProductCart(resp));
     };
 };
 // GET ALL PRODUCTS CART
@@ -38,8 +39,19 @@ const clearCart = (cart) => {
 };
 export const clearCartAction = () => {
     return async (dispatch) => {
-        const clear = localStorage.removeItem('products-cart');
-        dispatch(clearCart(clear));
+        const clear = localStorage.removeItem('products-cart') || [];
+        const resp = await Swal.fire({
+            title: 'Are you sure?',
+            text: "If you remove all items you can't reverse it!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, Remove all items!',
+            cancelButtonText: 'No, cancel!',
+        });
+        if(resp.isConfirmed){
+            cart.splice(0,100);
+            dispatch(clearCart(clear));
+        };
     }
 }
 

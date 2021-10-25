@@ -1,3 +1,5 @@
+import Swal from 'sweetalert2';
+
 import { TYPES } from '../types/TYPES';
 import { authLoginFetch, authRegisterFetch, validateTokenFetch } from '../helpers/authFetch';
 import { finishLoadingForm, startAuthLoading } from './formLoading-action';
@@ -13,14 +15,19 @@ export const authLoginAction = (user) => {
     return async (dispatch) => {
         try{
             dispatch(startAuthLoading());
-            const data = await authLoginFetch(user);
+            const data = await authLoginFetch(user)
             if(data.ok === true){
                 localStorage.setItem('token', data.token);
                 dispatch(login(data));
                 dispatch(finishLoadingForm());
             }
         }catch(err){
-            console.log(`ERROR ${err}`);
+            let error = err.response.data;
+            Swal.fire({
+                icon: 'error',
+                title: 'Login Form',
+                text: error?.msg
+            });
             dispatch(finishLoadingForm());
         };
     };
@@ -43,7 +50,12 @@ export const authRegisterAction = (user) => {
                 dispatch(finishLoadingForm());
             };
         }catch(err){
-            console.log(`ERROR ${err}`);
+            let error = err.response.data;
+            Swal.fire({
+                icon: 'error',
+                title: 'Login Form',
+                text: error?.msg
+            });
             dispatch(finishLoadingForm());
         };
     };

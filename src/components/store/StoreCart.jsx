@@ -20,10 +20,10 @@ export const StoreCart = () => {
                 <h1>Carrito</h1>
                 <hr />
                 <div className="all-items-in-cart">
-                {cart.map(items => (
+                {cart.map((items, idx) => (
                     <div 
                         className="item-cart-container"
-                        key={items.id}
+                        key={idx}
                     >
                         <div className="item-cart-img-product">
                             <img src={items.image} alt="pic-item" />
