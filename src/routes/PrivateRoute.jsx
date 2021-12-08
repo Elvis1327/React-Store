@@ -1,22 +1,22 @@
 import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import { Navigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
-export const PrivateRoute = ({component: Component, isAuthenticated, ...rest}) => {
+export const PrivateRoute = ({children}) => {
+
+    const { check } = useSelector(state => state.auth);
+
     return (
-        <Route
-            {...rest}
-            render={(props) => (
-                (isAuthenticated === true)
-                ? <Component {...props} />
-                : <Redirect to="/auth/login" />
-            )}
-        />
-    );
+        <>
+        {check === true
+            ? (children)
+            : (<Navigate to="/auth/register" />)
+        }
+        </>
+    )
 };
-PrivateRoute.prototype = {
-    isAuthenticated: PropTypes.bool.isRequired
-};
+
+
 
 
 

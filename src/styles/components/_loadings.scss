@@ -28,6 +28,7 @@
 .loading-one-product{
     width: 100%;
     position: relative;
+    min-height: 100vh;
 }
 .loading-one-product-snniper{
     position: absolute;
@@ -39,10 +40,6 @@
     border-radius: 100%;
     border-left-color: $emerald;
     animation: loading-one-product infinite linear 1s;
-    // animation-name: loading-one-product;
-    // animation-iteration-count: infinite;
-    // animation-duration: 1s;
-    // animation-timing-function: linear;
 }
 @keyframes loading-one-product {
     0%{

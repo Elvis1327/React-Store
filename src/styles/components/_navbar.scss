@@ -19,6 +19,16 @@
         color: $emerald;
     }
 }
+//////////////////// BUTTON RESPONSIVE ///////////////////
+.responsive-button-menu{
+    display: none;
+}
+.navbar-responsive-out{
+    display: none;
+}
+.navbar-links-out{
+    display: none;
+}
 
 .navbar{
     display: flex;
@@ -103,4 +113,60 @@
     }
 }
 
+// RESPONSIVE
+@media screen and (max-width: 599px){
+    ._main-header{
+        width: 100%;
+        padding: 0 20px;
+        align-items: center;
+        position: fixed;
+        z-index: 1;
+        top: 0px;
+        left: 0px;
+    }
+    .navbar{
+        display: none;
+    }
+    .principal-h1{
+        font-size: 18px;
+    };
+
+    // RESPONSIVE BUTTON
+    .responsive-button-menu{
+        display: block;
+        border: 1px solid #ccc;
+        color: white;
+        background-color: $dark-bootstrap;
+        font-size: 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .navbar-responsive{
+        width: 100%;
+        background-color: $dark-bootstrap;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 60px;
+        left: 0px;
+        padding: 10px 0px;
+        transform: translateX(0px);
+        transition: all 1s ease;
+    }
+    .navbar-responsive-out{
+        top: 80px;
+        position: absolute;
+        transform: translateX(0px);
+        transition: all 1s ease;
+    }
+    .navbar-links{
+        font-size: 18px;
+    }
+    .navbar-links-out{
+        left: -100px;
+        transition: all 1s ease;
+    }
+
+}
 

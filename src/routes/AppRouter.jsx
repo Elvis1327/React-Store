@@ -1,52 +1,56 @@
-// REACT UTILIRIES
-import React, {useEffect} from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-// REACT COMPONENTS AND UTILIRIES
-import { authValidateToken } from '../actions/auth-actions'; 
+import React, { useEffect } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+
 import { Home } from '../components/shared/Home';
 import { Navbar } from '../components/shared/Navbar';
 import { AuthRoute } from './AuthRoute';
 import { StoreRoute } from './StoreRoute';
 import { NotFoundPage } from '../components/shared/NotFoundPage';
-import {PrivateRoute} from './PrivateRoute';
+import { PrivateRoute } from '../routes/PrivateRoute';
 import {PublicRoute} from './PublicRoute';
+import { authValidateToken } from '../actions/auth-actions';
 
 export const AppRouter = () => {
+
     const dispatch = useDispatch();
-    const { check } = useSelector(state => state.auth);
 
     useEffect(() => {
         dispatch(authValidateToken());
-    },[dispatch]); 
+    },[dispatch]);
+    
     return (
-        <Router>
+        <BrowserRouter>
             <Navbar />
             <div>
-                <Switch>
-                    <PublicRoute
-                        path="/auth" 
-                        component={AuthRoute}
-                        isAuthenticated={check}
+                <Routes>
+                    <Route
+                        path="/auth/*" 
+                        element={
+                            <PublicRoute>
+                                <AuthRoute />
+                            </PublicRoute>
+                        }
                     />
-                    <PrivateRoute 
-                        path="/store" 
-                        component={StoreRoute}
-                        isAuthenticated={check} 
+                    <Route 
+                        path="/store/*"
+                        element={
+                            <PrivateRoute>
+                                <StoreRoute />
+                            </PrivateRoute>
+                        }
                     /> 
                     <Route 
-                        exact 
                         path="/" 
-                        component={Home} 
+                        element={<Home  />} 
                     />
-                    <Route 
-                        exact 
+                    <Route  
                         path="*" 
-                        omponent={NotFoundPage} 
+                        element={<NotFoundPage  />} 
                     />
-                </Switch>
+                </Routes>
             </div>
-        </Router>
+        </BrowserRouter>
     );
 };
 

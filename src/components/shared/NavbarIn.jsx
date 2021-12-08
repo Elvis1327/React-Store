@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+
 import { logoutAction } from '../../actions/auth-actions';
 
 const NavbarIn = () => {
@@ -9,7 +10,7 @@ const NavbarIn = () => {
     
     const handleLogout = () => {
         dispatch(logoutAction());
-    }
+    };
 
     return (
         <header className="_main-header">

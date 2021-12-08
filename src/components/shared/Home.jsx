@@ -20,7 +20,6 @@ export const Home = () => {
     return (
         <section className="main-container-home">
             <h1>Los Mejores Precios.</h1>
-
             {loading === true
                 ?
                 <div className="loading-parent-3-products">
@@ -39,10 +38,7 @@ export const Home = () => {
                         </div>
                     ))};
                 </div>
-
             }
-
-
         </section>
     );
 };
